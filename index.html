@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Daily-Chunks</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+</head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    span {
+        color: #6096B4;
+        /* font-weight: 500; */
+    }
+
+    .card-style {
+        border: none;
+        transition: 0.5s ease-in-out;
+        padding: 0px;
+    }
+
+    .card-style:hover {
+        border-radius: 0px;
+        box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-style-default {
+        background-color: #6096B4;
+        color: white;
+        border: none;
+        border-radius: 0%;
+        transition: 0.7s ease-in-out;
+    }
+
+    .btn-style-default:hover {
+        border: 1.3px solid #6096B4;
+        color: #6096B4;
+        background-color: transparent;
+    }
+
+    .page-link {
+        color: #6096B4;
+    }
+
+    .pagination {
+        justify-content: center;
+        border-radius: 0%;
+    }
+
+    #heading {
+        margin: 1.1% 0 0 9%;
+
+    }
+
+    #newsTitle {
+        margin-top: 2%;
+    }
+
+    .container {
+        justify-content: center;
+
+    }
+
+    /* 
+    .big-title{
+    } */
+
+    .container-head {
+        display: flex;
+        align-items: center;
+        color: #f6f6f6;
+        height: 42.5vh;
+        width: 100%;
+        padding: 4%;
+        image-rendering: hidden;
+        object-fit: cover;
+        background-image: url("https://images.pexels.com/photos/789750/pexels-photo-789750.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    }
+</style>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/?q=all&page=1">Daily <span>Chunks</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/?q=all&page=1">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/?q=Weather&page=1">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/?q=India&page=1">India</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/?q=Covid&page=1">Covid</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" name="q" value="All" style="border-radius: 0%;" type="search"
+                        placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" style="border-radius: 0%;" name="page" value="1" type="hidden"
+                        placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success btn-style-default" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-head">
+        <div class="img-container">
+            <div class="big-title">
+                <h2>Daily Chunks.</h2>
+                <p>It's an application that delivers breaking news and<br> current events from various sources,
+                    customizable by topic and source. </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="patch">
+    </div>
+
+
+
+    <h4 id="heading"></h4>
+    <div id="container" class="container row mx-auto my-4">
+
+        <!-- Card Start here  -->
+        <lottie-player src="https://assets2.lottiefiles.com/packages/lf20_t9gkkhz4.json" background="transparent"
+            speed="1" style="width: 400px; height: 300px; margin: 0 auto;" loop autoplay></lottie-player>
+    </div>
+
+
+    <nav aria-label="Page navigation example " class="mx-auto my-4">
+        <ul class="pagination">
+            <li class="page-item"><a id="pre" class="page-link" href="">Previous</a></li>
+
+            <li class="page-item"><a id="next" class="page-link" href="">Next</a></li>
+        </ul>
+    </nav>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+
+
+
+    <!-- CUSTOM SCRIPTING -->
+
+    <script>
+
+        const query = window.location.search.split('?')[1].split('&')[0].split('=')[1];
+        const page = parseInt(window.location.search.split('?')[1].split('&')[1].split('=')[1]);
+        const container = document.getElementById('container');
+        const pre = document.getElementById('pre');
+        const next = document.getElementById('next');
+
+
+        console.log(query, page);
+
+
+        const getNews = async (query, page) => {
+
+            let newsFetched = await fetch(`/api?q=${query}&sortBy=${page}&apiKey=51aa1d9eebab4d3ebfe873c6fbbeb530&pageSize=9&page=${page}`);
+            let data = await newsFetched.json();
+
+            console.log(data);
+
+            pre.href = `/?q=${query}&page=${page - 1}`;
+            next.href = `/?q=${query}&page=${page + 1}`;
+
+
+            let str = "";
+
+            heading.innerHTML = `${query[0].toUpperCase() + query.substring(1)} - Total results(${data.totalResults})`
+            for (let news of data.articles) {
+
+                big_heading.innerHTML = news.title;
+                big_para.innerHTML = news.description;
+                // container.style.backgroundImage = ;
+
+                str = str + ` <div class=" card m-3 card-style" style="width: 18rem;">
+            <img src="${news.urlToImage}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <span><b>Published On :</b> ${news.publishedAt.split('T')[0]}</span>
+                <span><b>Author :</b> ${news.author}</span>
+                <h5 id="newsTitle" class="card-title">${news.title}</h5>
+                <p id="newsDesc" class="card-text">${news.description}</p>
+                <a target = "_blank" href="${news.url}" class="btn btn-primary btn-style">Read more</a>
+            </div>
+        </div>`
+            }
+            container.innerHTML = str;
+        }
+
+        getNews(query, page)
+
+    </script>
+
+
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+</body>
+
+</html>
