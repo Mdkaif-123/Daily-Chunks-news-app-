@@ -197,9 +197,6 @@
             heading.innerHTML = `${query[0].toUpperCase() + query.substring(1)} - Total results(${data.totalResults})`
             for (let news of data.articles) {
 
-                big_heading.innerHTML = news.title;
-                big_para.innerHTML = news.description;
-                // container.style.backgroundImage = ;
 
                 str = str + ` <div class=" card m-3 card-style" style="width: 18rem;">
             <img src="${news.urlToImage}" class="card-img-top" alt="...">
