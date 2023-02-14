@@ -116,7 +116,7 @@
                     </li>
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" name="q" value="All" style="border-radius: 0%;" type="search"
+                    <input class="form-control me-2" name="q" style="border-radius: 0%;" type="search"
                         placeholder="Search" aria-label="Search">
                     <input class="form-control me-2" style="border-radius: 0%;" name="page" value="1" type="hidden"
                         placeholder="Search" aria-label="Search">
@@ -170,7 +170,7 @@
     <!-- CUSTOM SCRIPTING -->
 
     <script>
-
+        window.location.href = 'https://daily-chunks-news.onrender.com/?q=All&page=1';
         const query = window.location.search.split('?')[1].split('&')[0].split('=')[1];
         const page = parseInt(window.location.search.split('?')[1].split('&')[1].split('=')[1]);
         const container = document.getElementById('container');
