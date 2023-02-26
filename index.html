@@ -170,7 +170,7 @@
     <!-- CUSTOM SCRIPTING -->
 
     <script>
-        window.location.href = 'https://daily-chunks-news.onrender.com/?q=All&page=1';
+//         window.location.href = 'https://daily-chunks-news.onrender.com/?q=All&page=1';
         const query = window.location.search.split('?')[1].split('&')[0].split('=')[1];
         const page = parseInt(window.location.search.split('?')[1].split('&')[1].split('=')[1]);
         const container = document.getElementById('container');
@@ -184,10 +184,10 @@
 
         const getNews = async (query, page) => {
 
-//             let newsFetched = await fetch(`/api?q=${query}&sortBy=${page}&apiKey=51aa1d9eebab4d3ebfe873c6fbbeb530&pageSize=9&page=${page}`);
-//             let data = await newsFetched.json();
+            let newsFetched = await fetch(`/api?q=${query}&sortBy=${page}&apiKey=51aa1d9eebab4d3ebfe873c6fbbeb530&pageSize=9&page=${page}`);
+            let data = await newsFetched.json();
 
-//             console.log(data);
+            console.log(data);
 
             pre.href = `/?q=${query}&page=${page - 1}`;
             next.href = `/?q=${query}&page=${page + 1}`;
