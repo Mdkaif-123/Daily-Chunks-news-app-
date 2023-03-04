@@ -6,6 +6,7 @@ const { CLIENT_RENEG_WINDOW } = require('tls');
 const PORT = 3000;
 
 const app = express();
+app.use('/static', express.static(path.join(__dirname, '/public')))
 
 
 app.get('/', (req, res) => {
