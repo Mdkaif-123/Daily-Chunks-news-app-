@@ -7,7 +7,7 @@
     <title>Daily-Chunks</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
+    <script src="https://kit.fontawesome.com/d6b3f4e3c1.js" crossorigin="anonymous"></script>
 </head>
 
 <style>
@@ -20,20 +20,19 @@
         font-family: 'Poppins', sans-serif;
     }
 
+    .navbar-brand {
+        font-weight: 500;
+    }
+
     span {
         color: #6096B4;
-        /* font-weight: 500; */
     }
 
     .card-style {
         border: none;
         transition: 0.5s ease-in-out;
-        padding: 0px;
-    }
-
-    .card-style:hover {
-        border-radius: 0px;
         box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.2);
+        padding: 0px;
     }
 
     .btn-style {
@@ -41,7 +40,7 @@
         color: white;
         border: none;
         border-radius: 0%;
-        transition: 0.7s ease-in-out;
+        transition: 0.9s ease-in-out;
     }
 
     .btn-style:hover {
@@ -60,7 +59,7 @@
     }
 
     #heading {
-        margin: 1.1% 0 0 9%;
+        margin: 3% 0 0 9%;
 
     }
 
@@ -73,9 +72,27 @@
 
     }
 
-    /* 
-    .big-title{
-    } */
+    .navbar-toggler {
+        border: none;
+    }
+
+    .navbar-toggler i {
+        font-size: 110%;
+        color: #6096B4;
+    }
+
+    .social-link {
+        border-radius: 50%;
+        width: 2.5rem;
+        height: 2.5rem;
+        box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .social-link i {
+        font-size: 0.8rem;
+    }
+
 
     .container-head {
         display: flex;
@@ -88,6 +105,25 @@
         object-fit: cover;
         background-image: url("https://images.pexels.com/photos/789750/pexels-photo-789750.jpeg?auto=compress&cs=tinysrgb&w=1600");
     }
+
+    .card-img-container{
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+    }
+
+    .card-img-top{
+        transition: 0.8s ease-in-out;
+    }
+
+    .card-img-top:hover{
+        object-fit: cover;
+        transform: scale(1.1);
+    }
+
+    .published{
+        margin-right:0.7rem ;
+    }
 </style>
 
 <body>
@@ -98,7 +134,7 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+                <i class="fa-solid fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
@@ -149,7 +185,7 @@
             speed="1" style="width: 400px; height: 300px; margin: 0 auto;" loop autoplay></lottie-player>
     </div>
 
-
+    <!--? PAGINATION  -->
     <nav aria-label="Page navigation example " class="mx-auto my-4">
         <ul class="pagination">
             <li class="page-item"><a id="pre" class="page-link" href="">Previous</a></li>
@@ -158,6 +194,46 @@
         </ul>
     </nav>
 
+    <!--? FOOTER  -->
+    <footer class="bg-light text-center text-white">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+            <!-- Section: Social media -->
+            <section class="mb-4">
+                <!-- Facebook -->
+                <a class="btn social-link text-white btn-floating m-1" style="background-color: #3b5998;" href="#!"
+                    role="button"><i class="fab fa-facebook-f"></i></a>
+
+                <!-- Twitter -->
+                <a class="btn social-link text-white btn-floating m-1" style="background-color: #55acee;" href="https://twitter.com/MdKaifA43103002?t=aXOEmZkvlNvj7wbvHYJnWg&s=09 "
+                    role="button"><i class="fab fa-twitter"></i></a>
+
+                <!-- Google -->
+                <a class="btn social-link text-white btn-floating m-1" style="background-color: #c2220d;" href="https://www.youtube.com/@codeway8693"
+                    role="button"><i class="fab fa-youtube"></i></a>
+
+                <!-- Instagram -->
+                <a class="btn social-link text-white btn-floating m-1" style="background-color: #ac2bac;" href="https://www.instagram.com/thekaifansari/"
+                    role="button"><i class="fab fa-instagram"></i></a>
+
+                <!-- Linkedin -->
+                <a class="btn social-link text-white btn-floating m-1" style="background-color: #0082ca;" href="https://www.linkedin.com/in/md-kaif-ansari-b74543243/"
+                    role="button"><i class="fab fa-linkedin-in"></i></a>
+                <!-- Github -->
+                <a class="btn social-link  text-white btn-floating m-1" style="background-color: #333333;" href="https://github.com/Mdkaif-123"
+                    role="button"><i class="fab fa-github"></i></a>
+            </section>
+            <!-- Section: Social media -->
+        </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color:#6096B4;">
+            © 2023 Copyright:
+            <a class="text-white" href="https://mdbootstrap.com/">Daily-Chunks.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
 
 
 
@@ -170,24 +246,24 @@
     <!-- CUSTOM SCRIPTING -->
 
     <script>
-//         window.location.href = 'https://daily-chunks-news.onrender.com/?q=All&page=1';
+
+        if (window.location.search === '') {
+            window.location.search = "?q=all&page=1";
+        }
+
         const query = window.location.search.split('?')[1].split('&')[0].split('=')[1];
         const page = parseInt(window.location.search.split('?')[1].split('&')[1].split('=')[1]);
         const container = document.getElementById('container');
         const pre = document.getElementById('pre');
         const next = document.getElementById('next');
-        
-
-
         console.log(query, page);
+
 
 
         const getNews = async (query, page) => {
 
             let newsFetched = await fetch(`/api?q=${query}&sortBy=${page}&apiKey=51aa1d9eebab4d3ebfe873c6fbbeb530&pageSize=9&page=${page}`);
             let data = await newsFetched.json();
-
-            console.log(data);
 
             pre.href = `/?q=${query}&page=${page - 1}`;
             next.href = `/?q=${query}&page=${page + 1}`;
@@ -198,15 +274,13 @@
             heading.innerHTML = `${query[0].toUpperCase() + query.substring(1)} - Total results(${data.totalResults})`
             for (let news of data.articles) {
 
-                // big_heading.innerHTML = news.title;
-                // big_para.innerHTML = news.description;
-                // container.style.backgroundImage = ;
-
                 str = str + ` <div class=" card m-3 card-style" style="width: 18rem;">
+                    <div class = "card-img-container"> 
             <img src="${news.urlToImage}" class="card-img-top" alt="...">
+                    </div>
             <div class="card-body">
-                <span><b>Published On :</b> ${news.publishedAt.split('T')[0]}</span>
-                <span><b>Author :</b> ${news.author}</span>
+                <span class = "published"><b><i class="fa-solid fa-calendar-days"></i></b> ${news.publishedAt.split('T')[0]}</span>
+                <span><b><i class="fa-solid fa-user"></i></b> ${news.author}</span>
                 <h5 id="newsTitle" class="card-title">${news.title}</h5>
                 <p id="newsDesc" class="card-text">${news.description}</p>
                 <a target = "_blank" href="${news.url}" class="btn btn-primary btn-style">Read more</a>
